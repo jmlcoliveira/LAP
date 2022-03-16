@@ -56,9 +56,14 @@ let rec nat x =
 	else x-1 :: nat (x-1)
 ;;
 
-
+let in v l =
+	match l with
+	 | [] -> [(v, 1)]
+	 |(x, n)::xs -> if x = v then (x, n+1)::xs else (x, 1)::(x, n)::
+;;
 
 let rec pack l =
 	match l with
 	 | [] -> []
-	 | x::xs -> 
+	 | x::xs -> add x (pack xs)
+;;
