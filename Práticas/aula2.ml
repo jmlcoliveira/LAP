@@ -56,6 +56,11 @@ let rec nat x =
 	else x-1 :: nat (x-1)
 ;;
 
+let rec netM x =
+	match x with
+	| 0 -> []
+	| x -> x-1 :: netM (x-1)
+
 let in v l =
 	match l with
 	 | [] -> [(v, 1)]
