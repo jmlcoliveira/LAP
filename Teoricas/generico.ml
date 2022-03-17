@@ -43,3 +43,4 @@ _               padrão universal anónimo
 
 (*As avaliações no match são feitas de forma sequencial*)
 
+(*failwith retorna algo do tipo a' *)
