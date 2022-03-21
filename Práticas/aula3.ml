@@ -78,5 +78,5 @@ let rec nFall t =
 and lnFall tl =
   match tl with
     | [] -> []
-    | t::ts ->  nFall t @ lnFall ts
+    | t::ts ->  nFall t :: lnFall ts
 ;;
