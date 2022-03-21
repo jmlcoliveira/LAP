@@ -12,8 +12,8 @@ let rec belongs v l =
 	| x::xs -> if v=x then true else belongs v xs
 ;;
 
-belongs 4 [1;2;3;4;5;6]
-belongs 7 [1;2;3;4;5;6]
+belongs 4 [1;2;3;4;5;6];;
+belongs 7 [1;2;3;4;5;6];;
 
 let rec union l1 l2 = 
 	match l1 with
@@ -56,7 +56,7 @@ let rec nat x =
 	else x-1 :: nat (x-1)
 ;;
 
-let rec netM x =
+let rec netM x =;
 	match x with
 	| 0 -> []
 	| x -> x-1 :: netM (x-1)
