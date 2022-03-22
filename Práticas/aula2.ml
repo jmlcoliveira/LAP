@@ -56,19 +56,42 @@ let rec nat x =
 	else x-1 :: nat (x-1)
 ;;
 
-let rec netM x =;
+let rec netM x =
 	match x with
 	| 0 -> []
 	| x -> x-1 :: netM (x-1)
 
-let in v l =
+
+let add v l =
 	match l with
-	 | [] -> [(v, 1)]
-	 |(x, n)::xs -> if x = v then (x, n+1)::xs else (x, 1)::(x, n)::
-;;
+		| [] -> [(v, 1)]
+		| (x, n)::xs -> if x=v then (x, n+1)::xs else (v, 1)::(x, n)::xs
 
 let rec pack l =
 	match l with
+		| [] -> []
+		| x::xs -> add x (pack xs)
+
+
+let rec create x n =
+	match n with
+	 | 0 -> []
+	 | _ -> x::create x (n-1)
+
+let rec unpack l =
+	match l with
+		| [] -> []
+		| (x, n)::xs -> create x n @ unpack xs
+
+
+let combinations l v = 
+	match v with
+		| 0 -> [[]]
+		| _ -> [create l v]
+
+let rec create l v =
+	match l with
 	 | [] -> []
-	 | x::xs -> add x (pack xs)
-;;
+	 | x::xs -> x @ create xs v
+
+let f1 x y z = x(y z)
