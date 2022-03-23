@@ -24,23 +24,32 @@ and lf tl =
       | t::ts -> ... f t ... lf ts ... 
 ;;
 
-(*Padrão          Conjunto de valores representados
+(*Tratamento de ficheiros*)
+
+let rec f ci =
+  try
+      let s = input_line ci in
+          ... f ci ...
+  with End_of_file -> ...
+;;
+
+(*Padrï¿½o          Conjunto de valores representados
 ~~~~~~          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 []              lista vazia
 [x]             listas com um elemento
 [x;y]           listas com dois elementos
-x::xs           listas não vazias
+x::xs           listas nï¿½o vazias
 x::y::xs        listas com pelo menos dois elementos
-5::xs           listas cujo primeiro elemento é 5
-x               todos os valores (padrão universal)
-_               padrão universal anónimo
+5::xs           listas cujo primeiro elemento ï¿½ 5
+x               todos os valores (padrï¿½o universal)
+_               padrï¿½o universal anï¿½nimo
 (x,y)           todos os pares ordenados
-(0,y)           todos os pares ordenados cuja 1ª componente é 0
+(0,y)           todos os pares ordenados cuja 1ï¿½ componente ï¿½ 0
 8               inteiro 8
-(x,y)::xs       lista não vazia de pares ordenados
+(x,y)::xs       lista nï¿½o vazia de pares ordenados
 'a'..'z'        letras de 'a' a 'z'
 *)
 
-(*As avaliações no match são feitas de forma sequencial*)
+(*As avaliaï¿½ï¿½es no match sï¿½o feitas de forma sequencial*)
 
 (*failwith retorna algo do tipo a' *)
