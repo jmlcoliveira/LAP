@@ -6,7 +6,6 @@ let rec howMany v t =
   match t with
     | Nil -> 0
 		| Node(x, l, r) -> howMany x l + howMany x r + (if x=v then 1 else 0)
-    (*| Node(x, l, r) -> if x=v then 1 + howMany x l + howMany x r else howMany x l + howMany x r*)
 		
 let rec eqPairs t =
   match t with
@@ -32,7 +31,6 @@ let rec belongs v l =
     match l with
     | [] -> false
     | x::xs -> if v=x then true else belongs v xs
-  
 
 let rec union l1 l2 = 
   match l1 with
@@ -51,13 +49,11 @@ let rec spring v t =
     | Nil -> Node(v, Nil, Nil)
     | Node(x, l, r) -> Node(x, spring v l, spring v r)
 
-
 let rec fall t =
   match t with
     | Nil -> Nil
 		| Node(_, Nil, Nil) -> Nil
     | Node(x, l, r) -> Node(x, fall l, fall r)
-
 
 let rec nTreeToList t =
   match t with
@@ -67,8 +63,6 @@ and tL t =
   match t with
     | [] -> []
     | t::ts -> nTreeToList t @ tL ts
-
-
 
 let rec nFall t =
   match t with
