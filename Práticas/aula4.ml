@@ -10,7 +10,7 @@ let countEmpty filename =
     close_in ic;
     v;;
 
-countEmpty "./Práticas/in.txt"
+countEmpty "./Práticas/out.txt"
 
 let writeString oc line = 
   output_string oc (line ^ "\n");
