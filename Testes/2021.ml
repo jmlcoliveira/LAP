@@ -48,4 +48,8 @@ let consorts rep p =
       clean p (consortsAux rep c) ;;
 
 
-consorts rep "b"
+consorts rep "b";;
+
+List.flatten;;
+
+let f x y = x (x y y);;
