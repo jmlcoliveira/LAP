@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /*int func(int x){
     return x*x;
@@ -6,7 +7,7 @@
 
 
 typedef int IntFunction(void);
-typedef IntFunction IntFunctionArray[100];
+//typedef IntFunction IntFunctionArray[100];
 
 
 int f(int a, int b){
