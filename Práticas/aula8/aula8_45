@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int fact(int x) {
+    if( x == 0 )
+        return 1 ;
+    else
+        return x * fact (x - 1) ;
+}
+
+int main() {
+    int a = 3 ;
+    int f = fact(a) ;
+    printf("%d\n", f) ;
+    return 0 ;
+}
+
+/*Estado da pilha
+
+    como 0==0, a pilha colapsa e devolve 1
+    28 0
+    27 0
+    26 PC - ?
+    25 SL - 0
+    24 DL - 19
+    23 x - 0
+    ______fact(1-1)_______
+    22 1
+    21 PC - ?
+    20 SL - 0
+    19 DL - 14
+    18 x - 1
+    ______fact(2-1)______
+    17 2
+    16 PC - ?
+    15 SL - 0
+    14 DL - 9
+    13 x - 2 valor do x anterior
+    ______fact(3-1)______
+    12 3   valor de x
+    11 PC - ?
+    10 SL - 0
+    9 DL - 3
+    8 x - 3
+    ______fact(3)_________
+    7 f - ?
+    6 a - 3
+    5 PC - ?
+    4 SL - 0
+    3 DL - 0
+    _______main_______
+    2 PC - ?
+    1 SL - ?
+    0 DL - ?
+    _______start_______
+*/
