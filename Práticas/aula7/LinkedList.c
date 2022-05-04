@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "LinkedList.h"
+#include <stdarg.h>
 
 typedef struct Node {
     Data data;
@@ -168,6 +169,17 @@ List listUniq(List l){
         n = listFilter(n, &toKeep);
     }
     return n;
+}
+
+List listNew(int n, ...)
+{
+    va_list va;
+    List l = NULL;
+    va_start(va, n);
+    while( n-- )
+        l = ListPutAtEnd(l, va_arg(va, double));
+    va_end(va);
+    return l;
 }
 
 void listTest(void) {
