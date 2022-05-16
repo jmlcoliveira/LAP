@@ -1,0 +1,32 @@
+<HTML>
+
+    <HEAD>
+    <TITLE>MyDocument</TITLE>
+    
+    <SCRIPT>
+    function runForm3(form, pref) {
+        let word = form.word.value;
+        var url = pref + word;
+        if (url === "") {              // igualdade estrita
+            alert("Error: Empty URL");
+        }
+        else {
+            document.location = url;   // change URL
+        }
+    }
+
+    </SCRIPT>
+    </HEAD>
+    
+    <BODY>
+    <H1>Search</H1>
+    <FORM ID="form3">
+        Enter Text in English: <INPUT TYPE="text" ID="word" SIZE=40>
+        <P><INPUT TYPE="button" VALUE="Google" ONCLICK="runForm3(form3, 'http://www.google.com/search?q=')">
+        <INPUT TYPE="button" VALUE="Wikipedia" ONCLICK="runForm3(form3, 'https://en.wikipedia.org/wiki/')">
+        <p></p>
+        <INPUT TYPE="button" VALUE="Portuguese" ONCLICK="runForm3(form3, 'http://translate.google.com/?langpair=en|pt&text=')">
+    </FORM>
+    </BODY>
+    
+    </HTML>

@@ -1,0 +1,33 @@
+<head>
+    <title>Lol</title>
+</head>
+<body>
+    <div>
+        <h1>Is it prime?</h1>
+        <input type="text" id="number" size="15px">
+        -> 
+        <input type="text" id="res" size="15px">
+        <p>
+        </p>
+        <button type="button" id="calc" size="10px" onclick="isPrimeC()">Prime?</button>
+    </div>
+
+    <script>
+        function isPrimeC(){
+            var n = parseInt(document.getElementById("number").value);
+            var res = document.getElementById("res");
+            if(isPrime(n))
+                res.value = "isPrime";
+            else res.value = "notPrime"
+        }
+
+        function isPrime(n){
+            if(n < 2) return false;
+            for(let i = 2; i<n; i++)
+                if(n%i===0)
+                    return false;
+            return true;
+        }
+    </script>
+</body>
+

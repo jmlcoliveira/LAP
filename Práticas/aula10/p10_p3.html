@@ -1,0 +1,33 @@
+<head>
+    <title>e3</title>
+</head>
+<script>
+    function isPrime(n){
+            if(n < 2) return false;
+            for(let i = 2; i<n; i++)
+                if(n%i===0)
+                    return false;
+            return true;
+        }
+
+    function f(){
+        let a = [];
+        let n = parseInt(document.getElementById("number").value);
+        for(let i = 2; i <= n; i++){
+            if(isPrime(i))
+            a.push(i);
+        }
+        document.getElementById("res").value = a;
+    }
+</script>
+
+<body>
+    <div>
+        <h1>Eratosthenes</h1>
+        <p>Generate prime until: <input type="text" id="number">
+        <p><textarea id="res" style="height: 100px; width: 400px; text-align: left;"></textarea>
+        <p>
+        <input type="button" value="Generate" onclick="f()" >
+
+    </div>
+</body>
